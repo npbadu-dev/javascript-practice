@@ -36,7 +36,7 @@ console.log(typeof year)
 */
 
 // let, const and var
-
+/*
 let age = 18;
 age = 19;
 
@@ -45,3 +45,17 @@ const birthYear = 2007;
 // const job;
 
 lastName = "Badu"; // work but not do this
+*/
+
+// Operators
+
+const now = 2031;
+const ageNitesh = now - 2007;
+const ageKhil = now - 2014;
+console.log(ageNitesh, ageKhil);
+
+console.log(ageNitesh * 2, ageNitesh / 2, 2 ** 3);
+
+const firstName = "Nitesh";
+const lastName = "Badu";
+console.log(firstName + " " + lastName);
