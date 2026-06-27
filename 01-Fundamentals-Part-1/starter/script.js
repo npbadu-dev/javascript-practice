@@ -17,7 +17,7 @@ let myCurrentJob = "learner";
 */
 
 // 06. Data Types
-
+/*
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
@@ -33,3 +33,15 @@ console.log(typeof year)
 
 year = 2007; //assigning the value to year = now type change
 console.log(typeof year)
+*/
+
+// let, const and var
+
+let age = 18;
+age = 19;
+
+const birthYear = 2007;
+// birthYear = 2008;
+// const job;
+
+lastName = "Badu"; // work but not do this
