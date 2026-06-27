@@ -140,3 +140,22 @@ console.log(`String with
 multiple
 lines`); // Templates Literals
 */
+
+// Taking Decision if..else.. statement
+
+const age = 15;
+if (age >= 18) {
+  console.log("Nitesh can start driving license 🚘");
+} else {
+  const yearLeft = 18 - age;
+  console.log(`Nitesh is too young, wait another ${yearLeft} years :)`);
+}
+
+const birthYear = 2007;
+let century;
+if (birthYear < 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
