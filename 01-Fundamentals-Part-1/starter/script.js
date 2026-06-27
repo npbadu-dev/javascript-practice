@@ -142,7 +142,7 @@ lines`); // Templates Literals
 */
 
 // Taking Decision if..else.. statement
-
+/*
 const age = 15;
 if (age >= 18) {
   console.log("Nitesh can start driving license 🚘");
@@ -159,3 +159,58 @@ if (birthYear < 2000) {
   century = 21;
 }
 console.log(century);
+*/
+
+// CHALLENGE #2
+/*
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const massMark2 = 95;
+const heightMark2 = 1.88;
+const massJohn2 = 85;
+const heightJohn2 = 1.76;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / heightJohn ** 2;
+
+const BMIMark2 = massMark2 / (heightMark2 * heightMark2);
+const BMIJohn2 = massJohn2 / (heightJohn2 * heightJohn2);
+
+console.log(BMIMark, BMIJohn);
+console.log(BMIMark2, BMIJohn2);
+
+let markHigherBMI;
+let markHigherBMI2;
+
+// checking condition
+if (BMIMark > BMIJohn) {
+  markHigherBMI = "Mark's BMI is higher than John's!";
+} else {
+  markHigherBMI = "John's BMI is higher than Mark's!";
+}
+if (BMIMark2 > BMIJohn2) {
+  markHigherBMI2 = "Mark's BMI is higher than John's!";
+} else {
+  markHigherBMI2 = "John's BMI is higher than Mark's!";
+}
+console.log(markHigherBMI);
+console.log(markHigherBMI2);
+
+// using templates literals
+if (BMIMark > BMIJohn) {
+  markHigherBMI = `Mark's BMI(${BMIMark}) is higher than John's BMI(${BMIJohn})`;
+} else {
+  markHigherBMI = `John's BMI(${BMIJohn}) is higher than Mark's BMI(${BMIMark})`;
+}
+if (BMIMark2 > BMIJohn2) {
+  markHigherBMI2 = `Mark's BMI(${BMIMark2}) is higher than John's BMI(${BMIJohn2})`;
+} else {
+  markHigherBMI2 = `John's BMI(${BMIJohn2}) is higher than Mark's BMI(${BMIMark2})`;
+}
+console.log(markHigherBMI);
+console.log(markHigherBMI2);
+*/
+
