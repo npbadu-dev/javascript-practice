@@ -214,3 +214,26 @@ console.log(markHigherBMI);
 console.log(markHigherBMI2);
 */
 
+// Type Conversion & Coercion
+
+// Type Conversion
+const inputYear = "2007";
+console.log(Number(inputYear), inputYear);
+console.log(inputYear + 19);
+console.log(Number(inputYear) + 19);
+
+console.log(Number("Nitesh"));
+console.log(typeof NaN);
+
+console.log(String(19), 19);
+console.log(typeof String(19), typeof 19);
+
+// Type Coercion
+console.log("I'm " + 23 + " years old :)");
+
+let n = "1" + 1;
+n = n - 1;
+console.log(n);
+
+console.log(2 + 3 + 4 + "5");
+console.log("10" - "4" - "3" - 2 + "5");
