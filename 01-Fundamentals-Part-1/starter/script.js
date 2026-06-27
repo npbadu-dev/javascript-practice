@@ -111,3 +111,32 @@ console.log(markHigherBMI);
 console.log(markHigherBMI2);
 */
 
+// Strings and Templates Literals
+/*
+const firstName = "Nitesh";
+const job = "student";
+const birthYear = 2007;
+const year = 2026;
+
+// normal string + number concatination
+const nitesh =
+  "I'm " +
+  firstName +
+  ", a " +
+  (year - birthYear) +
+  " " +
+  "years old " +
+  job +
+  "!";
+console.log(nitesh);
+
+const niteshNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`; // Templates Literals
+console.log(niteshNew);
+
+console.log(`just a regular string...`);
+
+console.log("String with \n\multiple \n\lines");
+console.log(`String with
+multiple
+lines`); // Templates Literals
+*/
