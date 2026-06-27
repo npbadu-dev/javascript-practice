@@ -62,7 +62,7 @@ console.log(firstName + " " + lastName);
 */
 
 // Operators Precedence
-
+/*
 const now = 2031;
 const ageNitesh = now - 2007;
 const ageKhil = now - 2014;
@@ -71,3 +71,43 @@ console.log(now - 2007 > now - 2014);
 
 const averageAge = (ageNitesh + ageKhil) / 2;
 console.log(averageAge);
+*/
+
+// CHALLENGE #1
+// mark & john ; BMI = mass / (height * height)
+/*
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const massMark2 = 95;
+const heightMark2 = 1.88;
+const massJohn2 = 85;
+const heightJohn2 = 1.76;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / heightJohn ** 2;
+
+const BMIMark2 = massMark2 / (heightMark2 * heightMark2);
+const BMIJohn2 = massJohn2 / (heightJohn2 * heightJohn2);
+
+console.log(BMIMark, BMIJohn);
+console.log(BMIMark2, BMIJohn2);
+
+let markHigherBMI;
+let markHigherBMI2;
+if (BMIMark > BMIJohn) {
+  markHigherBMI = "Mark";
+} else {
+  markHigherBMI = "John";
+}
+if (BMIMark2 > BMIJohn2) {
+  markHigherBMI2 = "Mark";
+} else {
+  markHigherBMI2 = "John";
+}
+console.log(markHigherBMI);
+console.log(markHigherBMI2);
+*/
+
