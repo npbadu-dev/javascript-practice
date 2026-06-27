@@ -47,8 +47,8 @@ const birthYear = 2007;
 lastName = "Badu"; // work but not do this
 */
 
-// Operators
-
+// Basic Operators
+/*
 const now = 2031;
 const ageNitesh = now - 2007;
 const ageKhil = now - 2014;
@@ -59,3 +59,15 @@ console.log(ageNitesh * 2, ageNitesh / 2, 2 ** 3);
 const firstName = "Nitesh";
 const lastName = "Badu";
 console.log(firstName + " " + lastName);
+*/
+
+// Operators Precedence
+
+const now = 2031;
+const ageNitesh = now - 2007;
+const ageKhil = now - 2014;
+
+console.log(now - 2007 > now - 2014);
+
+const averageAge = (ageNitesh + ageKhil) / 2;
+console.log(averageAge);
