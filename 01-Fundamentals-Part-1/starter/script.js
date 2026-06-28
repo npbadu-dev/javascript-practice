@@ -215,7 +215,7 @@ console.log(markHigherBMI2);
 */
 
 // Type Conversion & Coercion
-
+/*
 // Type Conversion
 const inputYear = "2007";
 console.log(Number(inputYear), inputYear);
@@ -237,3 +237,29 @@ console.log(n);
 
 console.log(2 + 3 + 4 + "5");
 console.log("10" - "4" - "3" - 2 + "5");
+*/
+
+// Truthy and Falsy Values
+/*
+console.log(Boolean(0));
+console.log(Boolean(1));
+console.log(Boolean(""));
+console.log(Boolean("0"));
+console.log(Boolean(null));
+console.log(Boolean(undefined));
+console.log(Boolean({}));
+
+const money = 10;
+if (money) {
+  console.log("Don't Spent money carelessly :)");
+} else {
+  console.log("You must get a job!");
+}
+
+let height;
+if(height){
+  console.log("YAY! Height is  defined :)");
+} else{
+  console.log("Assign height (:")
+}
+*/
