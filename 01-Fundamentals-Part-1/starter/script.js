@@ -263,3 +263,29 @@ if(height){
   console.log("Assign height (:")
 }
 */
+
+// Equality Operators (== vs ===)
+
+const age = "18";
+if (age === 18) {
+  console.log("You just became adult. (Strict)");
+}
+if (age == 18) {
+  console.log("You just became adult. (Loose)");
+}
+
+const favourite = Number(prompt("What's your favourite number?"));
+console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite === 7) {
+  console.log("THALA for a reason :)");
+} else if (favourite === 18) {
+  console.log("CHIKU for a reason");
+} else {
+  console.log("Number is neither 7 nor 18...");
+}
+
+if (favourite !== 23) {
+  console.log("Why not 23;");
+}
