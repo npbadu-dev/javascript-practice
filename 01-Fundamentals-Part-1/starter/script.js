@@ -380,7 +380,7 @@ if (day === "monday") {
 */
 
 // Conditional (Ternary) Operators
-
+/*
 const age = 18;
 age >= 18
   ? console.log("I like to drink wine 🍷")
@@ -399,3 +399,47 @@ if (age >= 18) {
 console.log(drink2);
 console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 🥤"}`);
 console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 🥤"}`);
+*/
+
+// CHALLENGE #4
+/*
+const bill = 275;
+let tip;
+
+if (bill > 50 && bill < 300) {
+  tip = (15 / 100) * bill;
+} else {
+  tip = (20 / 100) * bill;
+}
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`,
+);
+
+bill > 50 && bill < 300 ? (tip = (15 / 100) * bill) : (tip = (20 / 100) * bill);
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}.`,
+);
+
+
+// Tutor Code
+
+// const bill = 275;
+// const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+
+
+const bill = 430;
+const tip = bill >= 50 && bill <= 300 ? bill * 15 / 100 : bill * 20 / 100;
+
+console.log(bill);
+
+console.log(tip);
+
+console.log(bill+tip);
+
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is ${bill+tip}`); //If I print this, it will not cause error, but it won't be accepted as correct result
+
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);//This one is accepted as correct result
+*/
+
+
