@@ -335,5 +335,47 @@ if (scoreDolphins > scoreKoalas) {
 }
 */
 
+// The Switch Statement
+/*
+const day = "sunday";
+switch (day) {
+  case "monday":
+    console.log("Today is Monday");
+    console.log("Dream will come true :)");
+    break;
+  case "tuesday":
+    console.log("Today is Tuesday");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Wednesday & Thursday");
+    break;
+  case "friday":
+    console.log("Today is Friday");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy:) the weekends!");
+    break;
+  default:
+    console.log("Not a Valid Data!!");
+}
 
+// video challenge
+// const day = "sunday";
+if (day === "monday") {
+  console.log("Today is Monday");
+  console.log("Dream will come true :)");
+} else if (day === "tuesday") {
+  console.log("Today is Tuesday");
+} else if (day === "wednesday" || day === "thursday") {
+  console.log("Wednesday & Thursday");
+} else if (day === "friday") {
+  console.log("Today is Friday");
+} else if (day === "saturday" || day === "sunday") {
+  console.log("Enjoy:) the weekends!");
+} else {
+  console.log("Not a Valid Data!!");
+}
+*/
 
