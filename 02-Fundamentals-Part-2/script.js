@@ -210,3 +210,49 @@ const ages = [
 ];
 console.log(ages);
 */
+
+//  *********************************************
+// Array Operations
+//  *********************************************
+/*
+const friend = ["Parbat", "Sushant", "Anita"];
+console.log(friend);
+
+// Adding method
+// friend.push("Ashok");
+const newLength = friend.push("Ashok");
+console.log(friend);
+console.log(newLength);
+// console.log(friend.length);
+
+friend.unshift("Anil");
+console.log(friend);
+
+// Removing method
+// friend.pop();
+const popped = friend.pop();
+
+console.log(friend);
+console.log(popped);
+
+friend.shift()
+console.log(friend);
+
+// Position
+console.log(friend.indexOf("Sushant"));
+console.log(friend.indexOf("Nitesh"));
+
+friend.push(23)
+console.log(friend.includes("Sushant"));
+console.log(friend.includes("Nitesh"));
+console.log(friend.includes("23"));
+console.log(friend.includes(23));
+
+if(friend.includes("Sushant")){
+  console.log("You have a friend called Sushant");
+}
+if(friend.includes("Nitesh")){
+  console.log("You have a friend called Nitesh");
+}
+*/
+
