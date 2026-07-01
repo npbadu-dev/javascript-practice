@@ -307,3 +307,52 @@ const nitesh = {
 };
 console.log(nitesh);
 */
+
+// **************************************************
+// Dot vs Bracket Notation
+// **************************************************
+/*
+const nitesh = {
+  firstName: "nitesh",
+  lastName: "badu",
+  age: 2037 - 2007,
+  job: "student",
+  friends: ["Parbat", "Sushant", "Anita"],
+};
+
+console.log(nitesh);
+
+// Retriving data from object
+console.log(nitesh.job);
+console.log(nitesh["job"]);
+
+const nameKey = "Name";
+console.log(nitesh["first" + nameKey]);
+console.log(nitesh["last" + nameKey]);
+
+// console.log(nitesh."first" + nameKey) //not work
+
+const interestedIn = prompt(
+  "What do you want to know about Nitesh? Choose between firstName, lastName, age, job and firends",
+);
+
+if (nitesh[interestedIn]) {
+  console.log(nitesh[interestedIn]);
+} else {
+  console.log("Wrong Request :(");
+  console.log(
+    "Please Choose between firstName, lastName, age, job and firends",
+  );
+}
+
+// Adding new data to object
+nitesh.location = "Nepal";
+nitesh["github"] = "npbadu-dev";
+console.log(nitesh);
+
+// small task
+// "Nitesh has 3 friends, and his best friend is called Parbat."
+console.log(
+  `${nitesh.firstName} has ${nitesh.friends.length} friends, and his best friend is called ${nitesh.friends[0]}.`,
+);
+*/
