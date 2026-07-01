@@ -132,7 +132,7 @@ console.log(yearsUntilRetirement(1950, "Jonas"));
 // **************************************
 // CHALLENGE #1
 // **************************************
-
+/*
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
 function checkWinner(avgDolphins, avgKolas) {
@@ -158,23 +158,55 @@ scoreDolphins = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 
 checkWinner(scoreDolphins, scoreKoalas);
+*/
 
-// Tutor Code:-
-// const calcAverage = (a, b, c) => (a + b + c) / 3;
-// console.log(calcAverage(3, 4, 5));
+// ************************************************
+// Introduction to Arrays
+// ************************************************
+/*
+const friend1 = "Parbat";
+const friend2 = "Sushant";
+const friend3 = "Anita";
 
-// let scoreDolphins = calcAverage(44, 23, 71);
-// let scoreKoalas = calcAverage(65, 54, 49);
-// console.log(scoreDolphins, scoreKoalas);
+const friend = ["Parbat", "Sushant", "Anita"];
+console.log(friend);
 
-// const checkWinner = function (avgDolphins, avgKoalas) {
-//   if (avgDolphins >= 2 * avgKoalas) {
-//     console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
-//   } else if (avgKoalas >= 2 * avgDolphins) {
-//     console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
-//   } else {
-//     console.log("No team wins...");
-//   }
-// };
 
-// checkWinner(scoreDolphins, scoreKoalas);
+const years = new Array(1991, 2001, 2011, 2021);
+// console.log(years);
+// console.log(years[0]);
+
+console.log(friend[0]);
+console.log(friend.length);
+console.log(friend[friend.length - 1]);
+
+friend[2] = "Moti";
+console.log(friend);
+
+// friend = ["Umesh", "Roshan", "Sameer"]; //this give error.
+
+const firstName = "Nitesh";
+const nitesh = [firstName, "Badu", 2037-2007, "student", friend];
+console.log(nitesh);
+console.log(nitesh.length);
+
+// small-exercise
+const calcAge = function(birthYear){
+  return 2037 - birthYear;
+}
+
+const year = [1990, 1967, 2002, 2007, 2014, 2026];
+// console.log(birthYear(calcAge));
+
+const age1 = calcAge(year[0]);
+const age2 = calcAge(year[3]);
+const age3 = calcAge(year[year.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [
+  calcAge(year[0]),
+  calcAge(year[3]),
+  calcAge(year[year.length - 1]),
+];
+console.log(ages);
+*/
