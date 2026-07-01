@@ -356,3 +356,20 @@ console.log(
   `${nitesh.firstName} has ${nitesh.friends.length} friends, and his best friend is called ${nitesh.friends[0]}.`,
 );
 */
+
+// ***************************************************
+// Object Method
+// ***************************************************
+
+const nitesh = {
+  firstName: "nitesh",
+  lastName: "badu",
+  birthYear: 2007,
+  job: "student",
+  friends: ["Parbat", "Sushant", "Anita"],
+  hasDriverLicesnse: true,
+
+  calcAge: function (birthYear) {
+    return 2037 - birthYear;
+  },
+};
