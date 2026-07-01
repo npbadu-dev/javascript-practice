@@ -256,3 +256,41 @@ if(friend.includes("Nitesh")){
 }
 */
 
+// ******************************************
+// CHALLENGE #2
+// ******************************************
+/*
+const tip = function (calcTip) {
+  if (calcTip > 50 && calcTip < 300) {
+    return (15 / 100) * calcTip;
+  } else {
+    return (20 / 100) * calcTip;
+  }
+};
+
+const bills = [125, 555, 44];
+const tips = [tip(bills[0]), tip(bills[1]), tip(bills[bills.length - 1])];
+
+const total = [
+  bills[0] + tips[0],
+  bills[1] + tips[1],
+  bills[bills.length - 1] + tips[bills.length - 1],
+];
+
+console.log(bills[0], bills[1], bills[bills.length - 1]);
+console.log(tips[0], tips[1], tips[tips.length - 1]);
+console.log(total[0], total[1], total[total.length - 1]);
+
+// Tutor Code
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+// const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+console.log(bills, tips, totals);
+*/
+
