@@ -8,7 +8,7 @@
 let hasDriversLicense = false;
 const passTest = true;
 
-if (passTest) {
+if (passTest) [
   hasDriverLicense = true;
 }
 if(hasDriversLicense){
@@ -454,3 +454,55 @@ for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep}`);
 }
 */
+
+// ***********************************************************
+// Looping Arrays, Breaking and Continuing
+// ***********************************************************
+/*
+const niteshArray = [
+  "nitesh",
+  "badu",
+  2037 - 2007,
+  "student",
+  ["Parbat", "Sushant", "Anita"],
+];
+
+const types = [];
+for (let i = 0; i < niteshArray.length; i++) {
+  // console.log(niteshArray[i], typeof niteshArray[i]);
+
+  // Filling element in an Array
+  // types[i] = typeof niteshArray[i];
+  types.push(typeof niteshArray[i]);
+}
+// console.log(types);
+
+// Small Task
+const years = [1991, 2007, 1969, 2026];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  // ages[i]= 2037 - years[i];
+  ages.push(2037 - years[i]);
+}
+// console.log(ages);
+
+// continue & break
+console.log("--- ONLY STRING ---");
+for (let i = 0; i < niteshArray.length; i++) {
+  if (typeof niteshArray[i] !== "string") {
+    continue;
+  }
+  console.log(niteshArray[i], typeof niteshArray[i]);
+}
+
+console.log("--- BREAK with NUMBER ---");
+for (let i = 0; i < niteshArray.length; i++) {
+  if (typeof niteshArray[i] === "number") {
+    break;
+  }
+  console.log(niteshArray[i], typeof niteshArray[i]);
+}
+*/
+
+
