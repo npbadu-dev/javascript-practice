@@ -362,14 +362,48 @@ console.log(
 // ***************************************************
 
 const nitesh = {
-  firstName: "nitesh",
-  lastName: "badu",
+  firstName: "Nitesh",
+  lastName: "Badu",
   birthYear: 2007,
-  job: "student",
+  job: "Student",
   friends: ["Parbat", "Sushant", "Anita"],
   hasDriverLicesnse: true,
 
-  calcAge: function (birthYear) {
-    return 2037 - birthYear;
+  // calcAge: function (birthYear) {
+  // return 2037 - birthYear;
+  // },
+
+  // calcAge: function () {
+  // console.log(this);
+  // return 2037 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
   },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} years old ${this.job}, and ${this.hasDriverLicesnse ? "has a Driving License" : "has not a Driving License"}. He has ${this.friends.length} friends. His friends are ${this.friends[0]}, ${this.friends[1]} & ${this.friends[this.friends.length - 1]}`;
+  },
+  // in the above we can write this too ${this.age} instead of ${this.calcAge()}
 };
+
+console.log(nitesh.calcAge());
+
+console.log(nitesh.age);
+console.log(nitesh.age);
+console.log(nitesh.age);
+
+// console.log(nitesh.calcAge(nitesh.birthYear));
+// console.log(nitesh["calcAge"](2007));
+
+// Small Task;
+
+// calling method
+console.log(nitesh.getSummary());
+
+// direct printing method
+console.log(
+  `${nitesh.firstName} is a ${nitesh.age} years old ${nitesh.job}, and ${nitesh.hasDriverLicesnse ? "has a Driving License" : "has not a Driving License"}. He has ${nitesh.friends.length} friends. His friends are ${nitesh.friends[0]}, ${nitesh.friends[1]} & ${nitesh.friends[nitesh.friends.length - 1]}`,
+);
