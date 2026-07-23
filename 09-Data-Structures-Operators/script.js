@@ -98,6 +98,7 @@ restaurantShallowCopy.name = "NP Dhaba"
 
 console.log(restaurantShallowCopy.name, restaurant.name);
 */
+
 // *********** Destructuring Objects **************
 /*
 restaurant.orderDelivery({
@@ -144,6 +145,7 @@ const {
 } = openingHours;
 console.log(openRestaurant, closeRestaurant);
 */
+
 // *********** Destructuring Array **************
 /*
 const arr = [2, 3, 4];
