@@ -98,6 +98,7 @@ console.log(this);
 // };
 // calcAgeArrow(2012);
 
+/*
 const nitesh = {
   year: 2007,
   calcAge: function () {
@@ -117,3 +118,60 @@ puja.calcAge();
 
 const f = nitesh.calcAge;
 f();
+*/
+
+/*
+const nitesh = {
+  firstName: "Nitesh",
+  year: 2007,
+  calcAge: function () {
+    // console.log(this);
+    // console.log(nitesh);
+    console.log(2030 - this.year);
+
+    // Solution 1
+    // const self = this; // self or that
+    // const isGenZ = function () {
+    //   console.log(self);
+    //   console.log(
+    //     self.year >= 2000 && self.year <= 2010
+    //       ? `${self.firstName} is GenZ`
+    //       : `${self.firstName} is not GenZ`,
+    //   );
+    //   // console.log(
+    //   //   this.year >= 2000 && this.year <= 2010
+    //   //     ? `${this.firstName} is GenZ`
+    //   //     : `${this.firstName} is not GenZ`,
+    //   // );
+    // };
+
+    // Solution 2
+    const isGenZ = () => {
+      console.log(this);
+      console.log(
+        this.year >= 2000 && this.year <= 2010
+          ? `${this.firstName} is GenZ`
+          : `${this.firstName} is not GenZ`,
+      );
+    };
+    isGenZ();
+  },
+  greet: () => console.log(`Hello ${this.firstName}.`),
+};
+nitesh.greet();
+nitesh.calcAge();
+
+*/
+// Arguments KeyWord
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 3);
+addExpr(2, 3, 5, 8, 13);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 5, 8);

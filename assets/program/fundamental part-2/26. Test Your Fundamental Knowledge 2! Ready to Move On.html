@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Fundamental Knowledge 2! Ready to Move On?</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        /* Scrollbar - Webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
+        }
+
+        /* Global link styles */
+        a {
+            color: #6a6aff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #8888ff;
+        }
+        a:visited {
+            color: #9b8ec4;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #111;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .wrap {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 20px 16px 80px;
+        }
+
+        .header {
+            padding: 24px 0;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #252525;
+        }
+        .header h1 {
+            font-size: 1.4rem;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .header-title-row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        .header small {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .scoreboard {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            gap: 12px;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 8px 14px;
+            z-index: 100;
+            font-size: 0.8rem;
+        }
+        .sb-item { text-align: center; }
+        .sb-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: block;
+        }
+        .sb-lbl {
+            color: #666;
+            font-size: 0.7rem;
+        }
+
+        .section {
+            background: #181818;
+            border: 1px solid #252525;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #fff;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #252525;
+        }
+        .instruction-body {
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        .instruction-body p {
+            margin-bottom: 6px;
+        }
+        .instruction-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .qcard {
+            background: #181818;
+            border: 1px solid #252525;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .qhead {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .qnum {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .qcount {
+            font-size: 0.75rem;
+            color: #555;
+        }
+        .qbody {
+            font-size: 0.95rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        .qbody p { margin-bottom: 10px; }
+        .qbody p:last-child { margin-bottom: 0; }
+        .qbody pre {
+            background: #0d0d0d;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            padding: 12px 14px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #c8c8c8;
+        }
+        .qbody img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 8px 0;
+        }
+        .qbody img.zoomable {
+            cursor: -webkit-zoom-in;
+            cursor: zoom-in;
+        }
+
+        .qactions {
+            margin-top: 14px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            gap: 8px;
+        }
+        .btn-check {
+            padding: 8px 20px;
+            background: #333;
+            color: #ddd;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        .btn-check:hover { background: #3a3a3a; }
+        .btn-check:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+        .btn-check:disabled:hover {
+            background: #333;
+        }
+        .btn-next {
+            padding: 8px 20px;
+            background: transparent;
+            color: #888;
+            border: 1px solid #333;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: none;
+        }
+        .btn-next:hover { color: #ccc; border-color: #555; }
+
+        .final {
+            display: none;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 20px;
+            background: #181818;
+            border: 1px solid #252525;
+            border-radius: 8px;
+        }
+        .final h2 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .final-detail {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .btn-reset {
+            padding: 10px 28px;
+            background: #333;
+            color: #ddd;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .btn-reset:hover { background: #3a3a3a; }
+
+        /* Controlled spacer for empty line breaks */
+        .spacer {
+            height: 0.6em;
+        }
+
+        /* Collapsible sections */
+        .collapsible {
+            background: #181818;
+            border: 1px solid #252525;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .collapsible-toggle {
+            width: 100%;
+            padding: 14px 20px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-family: inherit;
+        }
+        .collapsible-toggle:hover {
+            background: rgba(255,255,255,0.03);
+        }
+        .collapsible-arrow {
+            font-size: 0.75rem;
+            color: #888;
+            transition: transform 0.2s;
+        }
+        .collapsible-body {
+            display: none;
+            padding: 16px 20px 16px;
+        }
+        .collapsible.open .collapsible-body {
+            display: block;
+        }
+        .collapsible.open .collapsible-arrow {
+            transform: rotate(90deg);
+        }
+
+        /* Code blocks */
+        .code-wrap {
+            background: #0d0d0d;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .code-tabs {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            background: #222;
+            border-bottom: 1px solid #2a2a2a;
+            overflow-x: auto;
+        }
+        .code-tab {
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #888;
+            font-size: 0.8rem;
+            font-family: monospace;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .code-tab:hover {
+            color: #ddd;
+        }
+        .code-tab.active {
+            color: #ddd;
+            border-bottom-color: #6a6aff;
+            background: #181818;
+        }
+        .code-panel {
+            display: none;
+        }
+        .code-panel.active {
+            display: block;
+        }
+        .code-block {
+            margin: 0;
+            padding: 14px 16px;
+            background: transparent;
+            color: #c8c8c8;
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre;
+            border: none;
+        }
+
+        /* Language badge */
+        .lang-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            background: #333;
+            color: #ccc;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        /* Learning objective block */
+        .learning-objective {
+            margin-top: 18px;
+            padding: 12px 14px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid #252525;
+            border-radius: 6px;
+        }
+        .learning-objective-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .learning-objective-item {
+            font-size: 0.85rem;
+            color: #ccc;
+            padding: 3px 0;
+        }
+
+        /* Related lectures */
+        .related-lectures {
+            margin-top: 15px;
+            padding: 12px 14px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid #252525;
+            border-radius: 6px;
+        }
+        .related-lectures-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .related-lecture-item {
+            font-size: 0.85rem;
+            color: #ccc;
+            padding: 3px 0;
+        }
+
+        /* Content styling for instructions/solutions/articles */
+        .content-body {
+            font-size: 0.9rem;
+            color: #bbb;
+            line-height: 1.7;
+        }
+        .content-body p { margin-bottom: 6px; }
+        .content-body p:last-child { margin-bottom: 0; }
+        .content-body ul, .content-body ol { margin: 8px 0; padding-left: 24px; }
+        .content-body li { margin-bottom: 4px; }
+        .content-body code {
+            background: #0d0d0d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.90em;
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+        }
+        .content-body pre {
+            background: #0d0d0d;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            padding: 12px 14px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #c8c8c8;
+        }
+        .content-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 8px 0;
+        }
+        .content-body img.zoomable {
+            cursor: -webkit-zoom-in;
+            cursor: zoom-in;
+        }
+        .content-body h4 {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 16px 0 8px;
+        }
+        .content-body h4:first-child {
+            margin-top: 0;
+        }
+        .content-body figure {
+            margin: 10px 0;
+        }
+        .content-body strong {
+            color: #ddd;
+        }
+        .content-body em {
+            color: #ccc;
+        }
+
+        /* Image lightbox overlay */
+        .img-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.70);
+            z-index: 9999;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            opacity: 0;
+            -webkit-transition: opacity 0.2s ease;
+            transition: opacity 0.2s ease;
+        }
+        .img-overlay.active {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            opacity: 1;
+        }
+        .img-overlay-img {
+            max-width: 95vw;
+            max-height: 95vh;
+            border-radius: 6px;
+            cursor: -webkit-zoom-out;
+            cursor: zoom-out;
+        }
+        .img-overlay-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            line-height: 1;
+            -webkit-transition: background 0.15s ease, color 0.15s ease;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .img-overlay-close:hover {
+            background: rgba(255,255,255,0.2);
+            color: #e55;
+        }
+
+        @media (max-width: 600px) {
+            .scoreboard {
+                top: auto;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                border-radius: 0;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                border-top: 1px solid #2a2a2a;
+                border-left: none;
+                border-right: none;
+                border-bottom: none;
+            }
+            .wrap { padding-bottom: 100px; }
+        }
+
+        .sb-correct .sb-val { color: #4a4; }
+        .sb-wrong .sb-val { color: #a44; }
+        .sb-remain .sb-val { color: #aa4; }
+
+        .qcard.done-correct { border-left: 3px solid #4a4; }
+        .qcard.done-wrong { border-left: 3px solid #a44; }
+        .qcard.done-skipped { border-left: 3px solid #aa4; }
+
+        /* Multi-select badge */
+        .select-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(106, 106, 255, 0.06);
+            color: #6a6aff;
+            border: 1px solid rgba(106, 106, 255, 0.15);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-left: 8px;
+        }
+
+        .opts {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .opt {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border: 1px solid #252525;
+            border-radius: 6px;
+            cursor: pointer;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .opt:hover { border-color: #444; }
+        .opt.locked { cursor: default; opacity: 0.9; }
+        .opt.locked:hover { border-color: #252525; }
+        .opt.picked { border-color: #6a6aff; }
+        .opt.show-correct {
+            border-color: #4a4;
+            background: rgba(68, 170, 68, 0.08);
+        }
+        .opt.show-wrong {
+            border-color: #a44;
+            background: rgba(170, 68, 68, 0.08);
+        }
+        .opt.show-correct:hover { border-color: #4a4; }
+        .opt.show-wrong:hover { border-color: #a44; }
+        
+        .opt-letter {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #222;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #888;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+        }
+        .opt.picked .opt-letter { background: #6a6aff; color: #fff; }
+        .opt.show-correct .opt-letter { background: #4a4; color: #fff; }
+        .opt.show-wrong .opt-letter { background: #a44; color: #fff; }
+
+        .opt-text {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            font-size: 0.9rem;
+            min-width: 0;
+        }
+        .opt-text p { margin: 0; }
+        .opt-text pre {
+            background: #0d0d0d;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            padding: 12px 14px;
+            overflow-x: auto;
+            margin: 6px 0;
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #c8c8c8;
+        }
+        .opt-text img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 6px 0;
+        }
+        .opt-text img.zoomable {
+            cursor: -webkit-zoom-in;
+            cursor: zoom-in;
+        }
+
+        .opt-fb {
+            padding: 6px 10px;
+            background: #1e1e1e;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #b0b0b0;
+            display: none;
+            width: 100%;
+            -webkit-box-ordinal-group: 100;
+            -ms-flex-order: 99;
+            order: 99;
+            flex-basis: 100%;
+        }
+
+        .result {
+            margin-top: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: none;
+        }
+        .result.is-correct {
+            background: rgba(68, 170, 68, 0.1);
+            color: #4a4;
+            display: block;
+        }
+        .result.is-wrong {
+            background: rgba(170, 68, 68, 0.1);
+            color: #a44;
+            display: block;
+        }
+        .result.is-skipped {
+            background: rgba(170, 170, 68, 0.1);
+            color: #aa4;
+            display: block;
+        }
+
+        .answer-info {
+            margin-top: 6px;
+            font-size: 0.8rem;
+            color: #6a6;
+            display: none;
+        }
+
+        .explanation {
+            margin-top: 8px;
+            padding: 10px 14px;
+            background: rgba(106, 106, 255, 0.06);
+            border: 1px solid rgba(106, 106, 255, 0.15);
+            border-radius: 6px;
+            display: none;
+        }
+        .explanation-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6a6aff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .explanation-content {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        .explanation-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 8px 0;
+        }
+        .explanation-content img.zoomable {
+            cursor: -webkit-zoom-in;
+            cursor: zoom-in;
+        }
+
+        .final-pct {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+        .final-pct.pass { color: #4a4; }
+        .final-pct.fail { color: #a44; }
+
+        /* Check All button */
+        .check-all-wrap {
+            text-align: center;
+            margin: 24px 0 10px;
+        }
+        .btn-check-all {
+            padding: 10px 32px;
+            background: #333;
+            color: #ddd;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .btn-check-all:hover { background: #3a3a3a; }
+        .btn-check-all:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+        .btn-check-all:disabled:hover {
+            background: #333;
+        }
+</style>
+</head>
+<body>
+    <div class="scoreboard">
+        <div class="sb-item sb-correct">
+            <span class="sb-val" id="s-c">0</span>
+            <span class="sb-lbl">Correct</span>
+        </div>
+        <div class="sb-item sb-wrong">
+            <span class="sb-val" id="s-w">0</span>
+            <span class="sb-lbl">Wrong</span>
+        </div>
+        <div class="sb-item sb-remain">
+            <span class="sb-val" id="s-r">12</span>
+            <span class="sb-lbl">Remaining</span>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="header">
+            <h1>Test Your Fundamental Knowledge 2! Ready to Move On?</h1>
+            <small>12 questions</small>
+        </div>
+
+
+    <div class="qcard" id="q-1">
+        <div class="qhead">
+            <span class="qnum">Question 1</span>
+        </div>
+        <div class="qbody"><p>What is the primary purpose of 'strict mode' in JavaScript?</p></div>
+        <div class="opts" data-type="radio" data-q="q1">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q1','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>It makes JavaScript code execute faster</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q1','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>It allows the use of modern JavaScript features</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q1','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>It catches errors and prevents unsafe coding practices</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q1','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>It enables backward compatibility with older browsers</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-1"></div>
+        <div class="answer-info" id="a-1">Correct Answer: C</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-1" disabled onclick="check(1,'radio')">Check</button>
+            <button class="btn-next" id="nb-1" onclick="goNext(1)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-2">
+        <div class="qhead">
+            <span class="qnum">Question 2</span>
+        </div>
+        <div class="qbody"><p>What is the difference between parameters and arguments in JavaScript functions?</p></div>
+        <div class="opts" data-type="radio" data-q="q2">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q2','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>Parameters are used in function calls, arguments are used in function definitions</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q2','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>Parameters are placeholders in function definitions, arguments are actual values passed during function calls</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q2','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>Parameters can be optional, arguments are always required</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q2','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>Parameters are for primitive values, arguments are for objects</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-2"></div>
+        <div class="answer-info" id="a-2">Correct Answer: B</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-2" disabled onclick="check(2,'radio')">Check</button>
+            <button class="btn-next" id="nb-2" onclick="goNext(2)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-3">
+        <div class="qhead">
+            <span class="qnum">Question 3</span>
+        </div>
+        <div class="qbody"><p>What is a key practical difference between function declarations and function expressions?</p></div>
+        <div class="opts" data-type="radio" data-q="q3">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q3','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>Function declarations are faster to execute than function expressions</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q3','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>Function expressions can only be used as callbacks</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q3','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>Function expressions have access to more variables than function declarations</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q3','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>Function declarations can be called before they are defined in the code</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-3"></div>
+        <div class="answer-info" id="a-3">Correct Answer: D</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-3" disabled onclick="check(3,'radio')">Check</button>
+            <button class="btn-next" id="nb-3" onclick="goNext(3)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-4">
+        <div class="qhead">
+            <span class="qnum">Question 4</span>
+        </div>
+        <div class="qbody"><p>When do arrow functions require curly braces {}?</p></div>
+        <div class="opts" data-type="radio" data-q="q4">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q4','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>When they have more than one parameter</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q4','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>When they need to be called immediately</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q4','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>When they have more than one line of code in the function body</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q4','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>When they are declared inside another function</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-4"></div>
+        <div class="answer-info" id="a-4">Correct Answer: C</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-4" disabled onclick="check(4,'radio')">Check</button>
+            <button class="btn-next" id="nb-4" onclick="goNext(4)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-5">
+        <div class="qhead">
+            <span class="qnum">Question 5</span>
+        </div>
+        <div class="qbody"><p>What happens when a 'return' statement is executed in a function?</p></div>
+        <div class="opts" data-type="radio" data-q="q5">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q5','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>The function is deleted from memory</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q5','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>The function value is stored for later use</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q5','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>The function stops running and returns the specified value</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q5','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>The function pauses execution until it's called again</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-5"></div>
+        <div class="answer-info" id="a-5">Correct Answer: C</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-5" disabled onclick="check(5,'radio')">Check</button>
+            <button class="btn-next" id="nb-5" onclick="goNext(5)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-6">
+        <div class="qhead">
+            <span class="qnum">Question 6</span>
+        </div>
+        <div class="qbody"><p>How do you access the third element in an array named 'friends'?</p></div>
+        <div class="opts" data-type="radio" data-q="q6">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q6','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>`friends[3]`</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q6','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>`friends[2]`</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q6','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>`friends.3`</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q6','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>`friends.third`</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-6"></div>
+        <div class="answer-info" id="a-6">Correct Answer: B</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-6" disabled onclick="check(6,'radio')">Check</button>
+            <button class="btn-next" id="nb-6" onclick="goNext(6)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-7">
+        <div class="qhead">
+            <span class="qnum">Question 7</span>
+        </div>
+        <div class="qbody"><p>What is an object in JavaScript?</p></div>
+        <div class="opts" data-type="radio" data-q="q7">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q7','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>A primitive data type</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q7','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>A data structure that stores key-value pairs</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q7','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>A function that returns a value</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q7','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>A variable that can change its type</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-7"></div>
+        <div class="answer-info" id="a-7">Correct Answer: B</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-7" disabled onclick="check(7,'radio')">Check</button>
+            <button class="btn-next" id="nb-7" onclick="goNext(7)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-8">
+        <div class="qhead">
+            <span class="qnum">Question 8</span>
+        </div>
+        <div class="qbody"><p>When must you use bracket notation instead of dot notation to access an object property?</p></div>
+        <div class="opts" data-type="radio" data-q="q8">
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q8','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>When you need to compute the property name dynamically</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q8','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>When the property name is a number</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q8','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>When the property name contains spaces</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q8','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>When the property value is an array</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-8"></div>
+        <div class="answer-info" id="a-8">Correct Answer: A</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-8" disabled onclick="check(8,'radio')">Check</button>
+            <button class="btn-next" id="nb-8" onclick="goNext(8)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-9">
+        <div class="qhead">
+            <span class="qnum">Question 9</span>
+        </div>
+        <div class="qbody"><p>What happens when you try to access an object property that doesn't exist?</p></div>
+        <div class="opts" data-type="radio" data-q="q9">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q9','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>An error is thrown</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q9','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>The code execution stops</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q9','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>null is returned</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q9','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>undefined is returned</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-9"></div>
+        <div class="answer-info" id="a-9">Correct Answer: D</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-9" disabled onclick="check(9,'radio')">Check</button>
+            <button class="btn-next" id="nb-9" onclick="goNext(9)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-10">
+        <div class="qhead">
+            <span class="qnum">Question 10</span>
+        </div>
+        <div class="qbody"><p>What does the 'this' keyword refer to in a method?</p></div>
+        <div class="opts" data-type="radio" data-q="q10">
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q10','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>The object that is calling the method</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q10','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>The global window object</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q10','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>The function itself</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q10','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>The parent object in inheritance</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-10"></div>
+        <div class="answer-info" id="a-10">Correct Answer: A</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-10" disabled onclick="check(10,'radio')">Check</button>
+            <button class="btn-next" id="nb-10" onclick="goNext(10)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-11">
+        <div class="qhead">
+            <span class="qnum">Question 11</span>
+        </div>
+        <div class="qbody"><p>What does the `break` statement do in a loop?</p></div>
+        <div class="opts" data-type="radio" data-q="q11">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q11','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>Pauses the loop temporarily</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q11','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>Restarts the loop from the beginning</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q11','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>Terminates the loop completely</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q11','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>Skips to a specific iteration</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-11"></div>
+        <div class="answer-info" id="a-11">Correct Answer: C</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-11" disabled onclick="check(11,'radio')">Check</button>
+            <button class="btn-next" id="nb-11" onclick="goNext(11)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+    <div class="qcard" id="q-12">
+        <div class="qhead">
+            <span class="qnum">Question 12</span>
+        </div>
+        <div class="qbody"><p>When is a while loop more appropriate than a for loop?</p></div>
+        <div class="opts" data-type="radio" data-q="q12">
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q12','radio')">
+                <span class="opt-letter">A</span>
+                <span class="opt-text"><p>When you know exactly how many iterations you need</p></span>
+            </label>
+            <label class="opt" data-correct="true" data-feedback="" onclick="sel(this,'q12','radio')">
+                <span class="opt-letter">B</span>
+                <span class="opt-text"><p>When you don't know beforehand how many iterations the loop will have</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q12','radio')">
+                <span class="opt-letter">C</span>
+                <span class="opt-text"><p>When you need to loop through an array</p></span>
+            </label>
+            <label class="opt" data-correct="false" data-feedback="" onclick="sel(this,'q12','radio')">
+                <span class="opt-letter">D</span>
+                <span class="opt-text"><p>When you need to execute the loop body at least once</p></span>
+            </label>
+        </div>
+        <div class="result" id="r-12"></div>
+        <div class="answer-info" id="a-12">Correct Answer: B</div>
+        <div class="qactions">
+            <button class="btn-check" id="cb-12" disabled onclick="check(12,'radio')">Check</button>
+            <button class="btn-next" id="nb-12" onclick="goNext(12)">Next &rarr;</button>
+        </div>
+    </div>
+
+
+        <div class="check-all-wrap">
+            <button class="btn-check-all" id="btn-check-all" onclick="checkAll()">Check All Answers</button>
+        </div>
+
+        <div class="final" id="final">
+            <h2>Quiz Complete</h2>
+            <div class="final-pct" id="f-pct"></div>
+            <p class="final-detail" id="f-detail"></p>
+            <button class="btn-reset" onclick="location.reload()">Reset</button>
+        </div>
+    </div>
+
+
+    <script>
+        var T=12;
+        var c=0,w=0,sk=0,done=0,answered={};
+
+        function hasPicked(idx){
+            var card=document.getElementById('q-'+idx);
+            if(!card)return false;
+            var opts=card.getElementsByClassName('opt');
+            for(var i=0;i<opts.length;i++){
+                if(opts[i].className.indexOf('picked')!==-1)return true;
+            }
+            return false;
+        }
+
+        function updateCheckBtn(idx){
+            var btn=document.getElementById('cb-'+idx);
+            if(!btn||answered[idx])return;
+            btn.disabled=!hasPicked(idx);
+        }
+
+        function sel(el,qn,type){
+            if(el.className.indexOf('locked')!==-1)return;
+            var box=el.parentNode;
+            var opts=box.getElementsByClassName('opt');
+            var i;
+            var qIdx=parseInt(box.parentNode.id.replace('q-',''),10);
+            if(type==='radio'){
+                for(i=0;i<opts.length;i++){
+                    opts[i].className=opts[i].className.replace(' picked','');
+                }
+                el.className+=' picked';
+            }else{
+                if(el.className.indexOf('picked')!==-1){
+                    el.className=el.className.replace(' picked','');
+                }else{
+                    el.className+=' picked';
+                }
+            }
+            updateCheckBtn(qIdx);
+        }
+
+        function check(idx,type){
+            if(answered[idx])return;
+            var card=document.getElementById('q-'+idx);
+            var opts=card.getElementsByClassName('opt');
+            var picked={};
+            var correct={};
+            var i,o;
+            for(i=0;i<opts.length;i++){
+                o=opts[i];
+                if(o.className.indexOf('picked')!==-1) picked[i]=true;
+                if(o.getAttribute('data-correct')==='true') correct[i]=true;
+            }
+            var pickedCount=0,correctCount=0;
+            for(i in picked) pickedCount++;
+            for(i in correct) correctCount++;
+            if(pickedCount===0)return;
+            answered[idx]=true;
+
+            var ok=(pickedCount===correctCount);
+            if(ok){
+                for(i in picked){
+                    if(!correct[i]){ok=false;break;}
+                }
+            }
+
+            for(i=0;i<opts.length;i++){
+                o=opts[i];
+                o.className+=' locked';
+                if(correct[i]) o.className+=' show-correct';
+                if(picked[i]&&!correct[i]) o.className+=' show-wrong';
+                var fb=o.getAttribute('data-feedback');
+                if(fb&&fb.replace(/\s/g,'').length>0){
+                    var d=document.createElement('div');
+                    d.className='opt-fb';
+                    d.innerHTML=fb;
+                    d.style.display='block';
+                    o.appendChild(d);
+                }
+            }
+
+            var r=document.getElementById('r-'+idx);
+            if(ok){
+                r.className='result is-correct';r.innerHTML='&#10003; Correct';
+                card.className+=' done-correct';c++;
+            }else{
+                r.className='result is-wrong';r.innerHTML='&#10007; Wrong';
+                card.className+=' done-wrong';
+                document.getElementById('a-'+idx).style.display='block';
+                w++;
+            }
+
+            var exp=document.getElementById('exp-'+idx);
+            if(exp) exp.style.display='block';
+
+            done++;
+            document.getElementById('s-c').innerHTML=c;
+            document.getElementById('s-w').innerHTML=w;
+            document.getElementById('s-r').innerHTML=T-done;
+
+            var cb=document.getElementById('cb-'+idx);
+            cb.disabled=true;
+            cb.innerHTML=ok?'&#10003; Correct':'&#10007; Wrong';
+
+            if(idx<T) document.getElementById('nb-'+idx).style.display='inline-block';
+            if(done===T) showFinal();
+        }
+
+        function skipQuestion(idx){
+            if(answered[idx])return;
+            answered[idx]=true;
+
+            var card=document.getElementById('q-'+idx);
+            var opts=card.getElementsByClassName('opt');
+            var correct={};
+            var i,o;
+            for(i=0;i<opts.length;i++){
+                o=opts[i];
+                if(o.getAttribute('data-correct')==='true') correct[i]=true;
+            }
+
+            for(i=0;i<opts.length;i++){
+                o=opts[i];
+                o.className+=' locked';
+                if(correct[i]) o.className+=' show-correct';
+            }
+
+            var r=document.getElementById('r-'+idx);
+            r.className='result is-skipped';r.innerHTML='&#9888; Skipped';
+            card.className+=' done-skipped';
+            document.getElementById('a-'+idx).style.display='block';
+            sk++;
+
+            var exp=document.getElementById('exp-'+idx);
+            if(exp) exp.style.display='block';
+
+            done++;
+            document.getElementById('s-c').innerHTML=c;
+            document.getElementById('s-w').innerHTML=w;
+            document.getElementById('s-r').innerHTML=T-done;
+
+            var cb=document.getElementById('cb-'+idx);
+            cb.disabled=true;
+            cb.innerHTML='&#9888; Skipped';
+
+            if(idx<T) document.getElementById('nb-'+idx).style.display='inline-block';
+            if(done===T) showFinal();
+        }
+
+        function checkAll(){
+            for(var i=1;i<=T;i++){
+                if(!answered[i]){
+                    if(hasPicked(i)){
+                        var card=document.getElementById('q-'+i);
+                        var typeAttr=card.getElementsByClassName('opts')[0].getAttribute('data-type');
+                        check(i,typeAttr);
+                    }else{
+                        skipQuestion(i);
+                    }
+                }
+            }
+            var cab=document.getElementById('btn-check-all');
+            if(cab){cab.disabled=true;cab.innerHTML='All Checked';}
+        }
+
+        function goNext(idx){
+            var next=document.getElementById('q-'+(idx+1));
+            if(next){try{next.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){next.scrollIntoView(true);}}
+        }
+
+        function showFinal(){
+            var pct=Math.round((c/T)*100);
+            var el=document.getElementById('f-pct');
+            el.innerHTML=pct+'%';
+            el.className='final-pct '+(pct>=60?'pass':'fail');
+            var detail=c+' of '+T+' correct';
+            if(sk>0) detail+=' ('+sk+' skipped)';
+            document.getElementById('f-detail').innerHTML=detail;
+            var f=document.getElementById('final');
+            f.style.display='block';
+            var cab=document.getElementById('btn-check-all');
+            if(cab){cab.disabled=true;cab.innerHTML='All Checked';}
+            setTimeout(function(){try{f.scrollIntoView({behavior:'smooth',block:'center'});}catch(e){f.scrollIntoView(true);}},300);
+        }
+    </script>
+</body>
+</html>
