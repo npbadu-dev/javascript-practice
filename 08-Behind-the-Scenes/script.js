@@ -1,1 +1,119 @@
-'use strict';
+"use strict";
+/*
+function calcAge(birthYear) {
+  const age = 2030 - birthYear;
+
+  function printAge() {
+    let output = `${firstName}, you are ${age}, born in ${birthYear}.`;
+    console.log(output);
+
+    if (birthYear >= 2000 && birthYear <= 2010) {
+      var genZ = true;
+
+      // Creating NEW variable with same name as outer scope's variable
+      const firstName = "Puday";
+
+      // Reassigning outer scope's variable
+      output = "New Output.";
+
+      const str = `OH, you are a genZ, ${firstName}.`;
+      console.log(str);
+
+      function add(a, b) {
+        return a + b;
+      }
+
+      const output = "New Output.";
+    }
+
+    //   console.log(str);
+    console.log(genZ);
+    console.log(output);
+    // console.log(add(2, 3)); // can work when remove "use strict" mode.
+  }
+  printAge();
+
+  return age;
+}
+const firstName = "Nitesh";
+calcAge(2007);
+*/
+
+/*
+// Variables
+console.log(firstName);
+// console.log(job);
+// console.log(birthYear);
+
+var firstName = "Nitesh";
+let job = "student";
+const birthYear = 2007;
+
+// Function
+console.log(addDecl(2, 3));
+// console.log(addExp(2,3));
+// console.log(addArrow(2,3));
+
+function addDecl(a, b) {
+  return a + b;
+}
+
+// we can also declare function with var not only with const, but it also gives error, but different error!
+const addExp = function (a, b) {
+  return a + b;
+};
+const addArrow = (a, b) => a + b;
+*/
+
+/*
+// Example
+console.log(numPressed);
+if (!numPressed) deleteShoppingCart();
+var numPressed = 10;
+
+function deleteShoppingCart() {
+  console.log("All products deleted!");
+}
+
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x);
+console.log(y === window.y);
+console.log(z === window.z);
+*/
+console.log(this);
+
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAge(2007);
+
+// const calcAgeArrow = (birthYear) => {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAgeArrow(2012);
+
+const nitesh = {
+  year: 2007,
+  calcAge: function () {
+    console.log(this);
+    // console.log(nitesh);
+    console.log(2030 - this.year);
+  },
+};
+nitesh.calcAge();
+
+const puja = {
+  year: 2010,
+};
+puja.calcAge = nitesh.calcAge;
+
+puja.calcAge();
+
+const f = nitesh.calcAge;
+f();
