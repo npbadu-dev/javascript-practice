@@ -7,12 +7,90 @@ const restaurant = {
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
 
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = "20:30",
+    address = "badenha",
+  }) {
+    // console.log(this);
+    console.log(
+      `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`,
+    );
+    // console.log(starterIndex);
+    // console.log(mainIndex);
+    // console.log(time);
+    // console.log(address);
+  },
 };
 
+// *********** Destructuring Objects **************
+
+restaurant.orderDelivery({
+  time: "22:30",
+  address: "Attariya, kailali",
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+// when there is no property that was pass in function
+restaurant.orderDelivery({
+  address: "Attariya, kailali",
+  starterIndex: 1,
+});
+const { name, openingHours, categories } = restaurant;
+// const { jpt, openingHours, categories } = restaurant; // when we give a random name rather than object property then that random name get undefined. To fix that problem we set default values
+console.log(name, openingHours, categories);
+
+// if we want to save that object property data in new Name
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default Values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Swapping or mutating variable
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+console.log("Before: ", a, b);
+// {a,b} = obj; // gives error
+({ a, b } = obj);
+console.log("After:", a, b);
+
+// nested Objects
+const {
+  fri: { open: openRestaurant, close: closeRestaurant },
+} = openingHours;
+console.log(openRestaurant, closeRestaurant);
+
+// *********** Destructuring Array **************
+/*
 const arr = [2, 3, 4];
 // const arr = [2, 3, 4, 5];  // also work when there is more data but less data define while destructuring
 const a = arr[0];
@@ -29,14 +107,14 @@ console.log(arr);
 let [main, , secondary] = restaurant.categories;
 console.log(main, secondary);
 
-// swapping main content to secondary and vice versa
+// swapping main content to secondary and vice versa 
 // ------ Method 1 -------
 // const temp = main;
 // main = secondary;
 // secondary = temp;
 // console.log(main, secondary);
 
-// ------ Method 2: destructuring method ------
+// ------ Method 2: destructuring method (Mutating variables)------
 [main, secondary] = [secondary, main];
 console.log(main, secondary);
 
@@ -60,21 +138,6 @@ console.log(i, j, k);
 // to prevent that we can simply define default values, if value exist, then they set in that position variable, if not simply that position value store default value
 const [p = 1, q = 1, r = 1] = [2, 3];
 console.log(p, q, r);
-//   openingHours: {
-//     thu: {
-//       open: 12,
-//       close: 22,
-//     },
-//     fri: {
-//       open: 11,
-//       close: 23,
-//     },
-//     sat: {
-//       open: 0, // Open 24 hours
-//       close: 24,
-//     },
-//   },
-// };
 
 // Data needed for a later exercise
 const flights =
@@ -97,3 +160,4 @@ const mexicanFoods = new Set([
   "avocado",
   "garlic",
 ]);
+*/
