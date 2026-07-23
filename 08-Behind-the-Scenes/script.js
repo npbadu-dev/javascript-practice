@@ -175,3 +175,51 @@ var addArrow = (a, b) => {
   return a + b;
 };
 addArrow(2, 5, 8);
+
+const puday = {
+  firstName: "Puja",
+  lastName: "Joshi",
+  age: 19,
+};
+
+function marryPerson(originalPerson, newLastName) {
+  originalPerson.lastName = newLastName;
+  return originalPerson;
+}
+
+const marriedPuday = marryPerson(puday, "Badu");
+
+// const marriedPuday = puday;
+// marriedPuday.lastName = "Badu";
+
+console.log("Before", puday);
+console.log("After", marriedPuday);
+
+const puday2 = {
+  firstName: "Puja",
+  lastName: "Joshi",
+  age: 19,
+  family: ["Debaki", "Meena", "Prakash"],
+};
+
+// Shallow Copy
+// const pudayCopy = {...puday2}
+// console.log(pudayCopy);
+
+// pudayCopy.lastName = "Badu";
+
+// console.log("Before", puday2);
+// console.log("After", pudayCopy);
+
+// pudayCopy.family.push("Maya")
+// pudayCopy.family.push("Parash")
+
+// console.log(puday2, pudayCopy);
+
+// Deep Copy/clone
+const pudayClone = structuredClone(puday2);
+
+pudayClone.family.push("Maya");
+pudayClone.family.push("Parash");
+
+console.log(puday2, pudayClone);
