@@ -41,10 +41,65 @@ const restaurant = {
     // console.log(time);
     // console.log(address);
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious Pasta with ${ing1}, ${ing2} and ${ing3}.`,
+    );
+  },
 };
 
-// *********** Destructuring Objects **************
+// ************ Spread Operator ******************
+/*
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, 7, 8, 9];
+console.log(badNewArr);
 
+// using spread operator
+const goodNewArr = [1, 2, ...arr];
+console.log(goodNewArr);
+console.log(...goodNewArr);
+
+const newMenu = [...restaurant.mainMenu, "Gnocci"];
+console.log(...newMenu);
+
+// Copy Array (Shallow copy)
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Merge two arrays together
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+// Iterables
+const str = "Nitesh";
+const letters = [...str, , "N."];
+console.log(letters);
+console.log(...str);
+// console.log(`${...str} Badu`); // give error
+
+// Order Pasta Function (Real world example)
+
+const ingredients = [
+  prompt("Let's Make Pasta! Ingredients 1?"),
+  prompt("Ingredients 2?"),
+  prompt("Ingredients 3?"),
+];
+console.log(ingredients);
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]); // without using spread operators
+restaurant.orderPasta(...ingredients);
+
+
+// Object
+const newRestaurant = { foundingYear: 1998, ...restaurant, founder: "Nitesh" };
+console.log(newRestaurant);
+
+const restaurantShallowCopy = { ...restaurant };
+restaurantShallowCopy.name = "NP Dhaba"
+
+console.log(restaurantShallowCopy.name, restaurant.name);
+*/
+// *********** Destructuring Objects **************
+/*
 restaurant.orderDelivery({
   time: "22:30",
   address: "Attariya, kailali",
@@ -88,7 +143,7 @@ const {
   fri: { open: openRestaurant, close: closeRestaurant },
 } = openingHours;
 console.log(openRestaurant, closeRestaurant);
-
+*/
 // *********** Destructuring Array **************
 /*
 const arr = [2, 3, 4];
