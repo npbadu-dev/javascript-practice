@@ -57,6 +57,38 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+  name: "Capri",
+  // numGuests: 20,
+  numGuests: 0,
+};
+const rest2 = {
+  name: "La Piazza",
+  owner: "Giovanni Rossi",
+};
+
+// set default no. of guests for all the restaurant object that donot have that property
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.owner = rest1.owner && "<ANNONYMOUS>";
+// rest2.owner = rest2.owner && "<ANNONYMOUS>";
+
+// OR Assignment operator
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// NULLISH Assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND Assignment operator
+// to learn about this and operator, let's say that we want to anonymize the names of the restaurant owners. So, when there currently is an owner, we want to basically replace that string with the string anonymous.
+rest1.owner &&= "<ANNONYMOUS>";
+rest2.owner &&= "<ANNONYMOUS>";
+
+console.log(rest1);
+console.log(rest2);
+
 // *************** The Nullish Coalescing Operator **********************
 /*
 restaurant.numGuests = 0;
