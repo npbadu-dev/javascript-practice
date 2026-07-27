@@ -1,6 +1,7 @@
 "use strict";
 
 // Data needed for first part of the section
+
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -47,8 +48,88 @@ const restaurant = {
       `Here is your delicious Pasta with ${ing1}, ${ing2} and ${ing3}.`,
     );
   },
+
+  // pizzas need to have at least one ingredient but the other ingredients are optional so for this type of situation REST parameter are perfect.
+  orderPizza: function (mainIngredients, ...otherIngredients) {
+    console.log(mainIngredients);
+    console.log(otherIngredients);
+    // console.log(otherIngredients[0]); // why not working;
+  },
 };
 
+// *************** Short Circuiting ************
+/*
+// 3 properties of logical operators
+// 1) Use any data types
+
+// -------- OR -----------
+console.log(0 || null || undefined || 1);
+
+restaurant.numGuests = 23;
+// the below guest1 or guest2 will not work if restaurant.numGuests = 0;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10; // guest 1 declaring other method using short-circuit
+console.log(guest2);
+
+// -------- AND -----------
+
+// at first checking whether restaurant.orderPizza exist or not, then if exist calling that function
+// Method 1
+
+if(restaurant.orderPizza){
+  restaurant.orderPizza("mushroom", "spinach");
+}
+// Alternative method; using short-circuti
+restaurant.orderPizza && restaurant.orderPizza("mushroom", "spinach");
+*/
+
+// *************** REST Pattern ****************
+/*
+// 1) Destructuring
+
+// SPREAD, bcz on the right side of '='
+const arr = [1, 2, ...[3, 4, 5]];
+
+// REST, bcz on the left side of '='
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...othersFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+// the rest syntax collect all the array elelemnts after the last declared Variable, it only collect the rest elements not collect the one which is skipped.
+console.log(othersFood);
+
+// Object
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+// 2) Functions
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
+  }
+  console.log(sum);
+};
+add(2, 3);
+add(1, 3, 5, 7, 9);
+add(1, 2, 4, 5, 7, 8, 9, 10);
+
+const x = [23, 5, 7];
+console.log(...x);
+const [...numbers] = [23, 5, 7];
+console.log(numbers);
+add(...x);
+
+// Real use cases (ordering pizza)
+restaurant.orderPizza("mushrooms", "onions", "olives", "spinach");
+restaurant.orderPizza("mushrooms");
+*/
 // ************ Spread Operator ******************
 /*
 const arr = [7, 8, 9];
