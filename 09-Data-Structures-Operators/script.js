@@ -57,6 +57,17 @@ const restaurant = {
   },
 };
 
+// *************** The Nullish Coalescing Operator **********************
+/*
+restaurant.numGuests = 0;
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+// the above code set the default value of guest to 10 if there is 0 no. of guest too, so which is the problem to fix that we have nullish coalescing operator.
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
 // *************** Short Circuiting ************
 /*
 // 3 properties of logical operators
