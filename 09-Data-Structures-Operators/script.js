@@ -57,6 +57,29 @@ const restaurant = {
   },
 };
 
+// ************ For-of Loop ****************
+/*
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) {
+  // console.log(item);
+  // console.log("one iteration complete!");
+}
+
+// also getting a current index.
+// for (const item of menu.entries()) {
+//   // console.log(item);
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+
+// destructuring the item: bettern version of above code.
+for (const [i, el] of menu.entries()) {
+  // console.log(item);
+  console.log(`${i + 1}: ${el}`);
+}
+
+// what is menu.entries()?
+// console.log([...menu.entries()]);
+*/
 // != *************** Challenge 1 ***************************
 /* 
 We're building a football betting app (soccer for my American friends 😅)!
