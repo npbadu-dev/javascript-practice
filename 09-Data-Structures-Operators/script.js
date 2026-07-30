@@ -81,9 +81,32 @@ const restaurant = {
   },
 };
 
+// ******************* Looping Objects *****************
+/*
+// Object.key property which work on property name
+const properties = Object.keys(openingHours);
+// console.log(properties);
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+// console.log(openStr);
+
+// Object.key property which work on property value
+const values = Object.values(openingHours);
+// console.log(values);
+
+// Object.entries property which work on entire Object
+const entries = Object.entries(openingHours)
+// console.log(entries);
+
+for(const [day, {open, close}] of entries){
+console.log(`On ${day} we open at ${open} and close at ${close}.`);}
+*/
+
 // ********* Optional Chaining *******************
 /*
-
 if (restaurant.openingHours && restaurant.openingHours.mon) {
   console.log(restaurant.openingHours.mon.open);
 }
@@ -119,8 +142,8 @@ console.log(users[1]?.name ?? "User array empty");
 // without optional chaining
 if(users.length > 0) console.log(users[0].name);
 else console.log("user array empty");
-
 */
+
 // ************ For-of Loop ****************
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
@@ -144,6 +167,7 @@ for (const [i, el] of menu.entries()) {
 // what is menu.entries()?
 // console.log([...menu.entries()]);
 */
+
 // != *************** Challenge 1 ***************************
 /* 
 We're building a football betting app (soccer for my American friends 😅)!
