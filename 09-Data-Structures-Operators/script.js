@@ -1,7 +1,9 @@
 "use strict";
 
 const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
 // put this outside to show object literals
+
 const openingHours = {
   // thu: {
   //   open: 12,
@@ -17,6 +19,7 @@ const openingHours = {
   // },
 
   // instead of above we can write like this in ES6 (3rd object literals)
+
   [weekdays[3]]: {
     open: 12,
     close: 22,
@@ -25,7 +28,7 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [`day-${2 + 4}`]: {
+  [weekdays[5]]: {
     open: 0, // Open 24 hours
     close: 12 + 12,
   },
@@ -78,6 +81,46 @@ const restaurant = {
   },
 };
 
+// ********* Optional Chaining *******************
+/*
+
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+// work for fri, bcz we have fri property in openingHours object
+// if (restaurant.openingHours.fri) {
+// console.log(restaurant.openingHours.fri.open);
+// }
+
+// console.log(restaurant.openingHours.mon.open); // -- this gives error.
+// With Optional Chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+console.log(restaurant.openingHours.fri?.open);
+
+// Example
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+for (const day of days) {
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? "closed";
+  console.log(`On ${day} we open at ${open}`);
+}
+
+// Method
+console.log(restaurant.order?.(0, 1) ?? "Method doesn't exist");
+console.log(restaurant.orderResoto?.(0, 1) ?? "Method doesn't exist");
+
+// Arrays
+const users = [{ name: "nitesh", email: "niteshprasadbadu@gmail.com" }];
+console.log(users[0]?.name ?? "User array empty");
+console.log(users[1]?.name ?? "User array empty");
+
+// without optional chaining
+if(users.length > 0) console.log(users[0].name);
+else console.log("user array empty");
+
+*/
 // ************ For-of Loop ****************
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
