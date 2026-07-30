@@ -1,6 +1,35 @@
 "use strict";
 
-// Data needed for first part of the section
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+// put this outside to show object literals
+const openingHours = {
+  // thu: {
+  //   open: 12,
+  //   close: 22,
+  // },
+  // fri: {
+  //   open: 11,
+  //   close: 23,
+  // },
+  // sat: {
+  //   open: 0, // Open 24 hours
+  //   close: 24,
+  // },
+
+  // instead of above we can write like this in ES6 (3rd object literals)
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${2 + 4}`]: {
+    open: 0, // Open 24 hours
+    close: 12 + 12,
+  },
+};
 
 const restaurant = {
   name: "Classico Italiano",
@@ -8,26 +37,18 @@ const restaurant = {
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
 
-  order: function (starterIndex, mainIndex) {
+  // to access openingHours inside this restaurant before ES6, we write that by this:
+  // openingHours: openingHours,  // it can be annoying bcz this property name is exactly the same as variable name from which we're getting this new object.
+
+  // After ES6, enhanced object literals, above can be written as:
+  openingHours, // this take this opening hours object and put it into the restaurant object and create a property name with exactly same as variable.
+
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({
+  orderDelivery({
     starterIndex = 1,
     mainIndex = 0,
     time = "20:30",
@@ -43,7 +64,7 @@ const restaurant = {
     // console.log(address);
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `Here is your delicious Pasta with ${ing1}, ${ing2} and ${ing3}.`,
     );
