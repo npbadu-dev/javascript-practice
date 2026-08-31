@@ -82,7 +82,7 @@ const restaurant = {
 };
 
 // != *************** Challenge 2 ***************************
-/* 
+/*
 Let's continue with our football betting app!
 
 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
@@ -254,7 +254,7 @@ for (const [i, el] of menu.entries()) {
 */
 
 // != *************** Challenge 1 ***************************
-/* 
+/*
 We're building a football betting app (soccer for my American friends 😅)!
 
 Suppose we get data from a web service about a certain game (below). In this challenge we're gonna work with the data. So here are your tasks:
@@ -391,7 +391,7 @@ console.log(rest1);
 console.log(rest2);
 */
 
-// *************** The Nullish Coalescing Operator **********************
+// ******* The Nullish Coalescing Operator ***************
 /*
 restaurant.numGuests = 0;
 const guest = restaurant.numGuests || 10;
@@ -592,7 +592,7 @@ console.log(arr);
 let [main, , secondary] = restaurant.categories;
 console.log(main, secondary);
 
-// swapping main content to secondary and vice versa 
+// swapping main content to secondary and vice versa
 // ------ Method 1 -------
 // const temp = main;
 // main = secondary;
