@@ -1,5 +1,4 @@
 "use strict";
-
 const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
 // put this outside to show object literals
@@ -81,7 +80,54 @@ const restaurant = {
   },
 };
 
+// *************** New Operation to make set useful! ************
+const italianFoods = new Set([
+  "pasta",
+  "gnocchi",
+  "tomatoes",
+  "olive oil",
+  "garlic",
+  "basil",
+]);
+
+const mexicanFoods = new Set([
+  "tortillas",
+  "beans",
+  "rice",
+  "tomatoes",
+  "avocado",
+  "garlic",
+]);
+
+// ------------ InterSection (Common) -------------------------
+const commonFood = italianFoods.intersection(mexicanFoods);
+console.log("InterSection: ", commonFood);
+console.log([...commonFood]);
+
+// ------------- Union (all-together) ---------------------
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log("Union: ", italianMexicanFusion);
+// other method to achive this union
+console.log([...new Set([...italianFoods, ...mexicanFoods])]);
+
+// --------------- (A - B) ------------------------
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+console.log("Difference Italian: ", uniqueItalianFoods);
+
+// --------------- (B - A) -----------------------------
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+console.log("Difference Mexican: ", uniqueMexicanFoods);
+
+// --------------(only A + only B) -------------------
+const uniqueItalianAndMexicanFoods =
+  italianFoods.symmetricDifference(mexicanFoods);
+console.log("Altogether: ", uniqueItalianAndMexicanFoods);
+
+// -------- subset of, super set of, disjoint sets -------
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
 // ******************* Sets *****************
+/*
 const orderSet = new Set([
   "Pasta",
   "Pizza",
@@ -118,6 +164,8 @@ console.log(staffUnique.length);
 console.log(
   new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size,
 );
+*/
+
 // != *************** Challenge 2 ***************************
 /*
 Let's continue with our football betting app!
