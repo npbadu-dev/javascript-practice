@@ -80,6 +80,54 @@ const restaurant = {
   },
 };
 
+// ***************** Working with strings Part- 1 ************
+/*
+const airline = "TAP Air Portugal";
+const plane = "A320";
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log("B737"[0]);
+
+console.log(airline.length);
+console.log("B737".length);
+
+console.log(airline.indexOf("r"));
+console.log(airline.lastIndexOf("r"));
+console.log(airline.indexOf("Portugal"));
+// console.log(airline.indexOf("portugal")); //case-sensitive
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(" ")));
+console.log(airline.slice(airline.lastIndexOf(" ") + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+// Mini-Examples
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats in B737/A320 plane, there are 6 seats in 1 row
+  const s = seat.slice(-1);
+  if (s === "B" || s === "E") {
+    console.log("You got a middle Seat :(");
+  } else {
+    console.log("You got Lucky :)");
+  }
+};
+checkMiddleSeat("11B");
+checkMiddleSeat("23C");
+checkMiddleSeat("3E");
+
+// Behind the Scenes JS does this whenever we call string with method
+console.log(new String("Nitesh"));
+console.log(typeof new String("Nitesh"));
+console.log(new String("Nitesh").slice(1));
+console.log(typeof new String("Nitesh").slice(1));
+*/
+
 // != *************** Challenge 3 ***************************
 /*
 Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
