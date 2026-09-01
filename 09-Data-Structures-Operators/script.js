@@ -81,6 +81,43 @@ const restaurant = {
   },
 };
 
+// ******************* Sets *****************
+const orderSet = new Set([
+  "Pasta",
+  "Pizza",
+  "Pizza",
+  "Risotto",
+  "Pasta",
+  "Pizza",
+]);
+console.log(orderSet);
+console.log(new Set("Nitesh"));
+
+console.log(orderSet.size);
+console.log(orderSet.has("Pizza"));
+console.log(orderSet.has("Bread"));
+
+orderSet.add("Garlic Bread");
+orderSet.add("Garlic Bread");
+console.log(orderSet);
+
+orderSet.delete("Risotto");
+console.log(orderSet);
+
+// orderSet.clear();
+// console.log(orderSet);
+
+for (const order of orderSet) {
+  console.log(order);
+}
+// Example
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(staffUnique.length);
+console.log(
+  new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size,
+);
 // != *************** Challenge 2 ***************************
 /*
 Let's continue with our football betting app!
