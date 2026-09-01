@@ -80,7 +80,44 @@ const restaurant = {
   },
 };
 
+// ******************* Maps *****************
+/*
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+console.log(rest.set(2, "Lisbon, Portugal"));
+
+// why set method returns the updated map
+rest
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+  .set("Open", 11)
+  .set("Close", 23)
+  .set(true, "We are Open :)")
+  .set(false, "We are Closed :(");
+
+// read data from a map
+console.log(rest.get("name"));
+console.log(rest.get(true));
+// console.log(rest.get("true")); // undefined, because key is boolean
+
+const time = 8;
+console.log(rest.get(time > rest.get("Open") && time < rest.get("Close")));
+
+console.log(rest.has("categories"));
+rest.delete(2);
+// rest.clear();
+const arr = [1, 2];
+rest.set(arr, "Test");
+
+rest.set(document.querySelector("h1"), "heading");
+
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr));
+*/
+
 // *************** New Operation to make set useful! ************
+/*
 const italianFoods = new Set([
   "pasta",
   "gnocchi",
@@ -125,6 +162,7 @@ console.log("Altogether: ", uniqueItalianAndMexicanFoods);
 
 // -------- subset of, super set of, disjoint sets -------
 console.log(italianFoods.isDisjointFrom(mexicanFoods));
+*/
 
 // ******************* Sets *****************
 /*
