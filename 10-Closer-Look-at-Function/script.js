@@ -30,3 +30,37 @@ createBooking("LH123", 10);
 createBooking("LH123", undefined, 1000);
 */
 
+// ******* How Passing Arguments work (Value vs References ) ********
+/*
+const flight = "LH234";
+const jonas = {
+  name: "Jonas Schmedtmann",
+  passport: 24525908,
+};
+
+const checkIn = function (flightNum, passenger) {
+  flightNum = "LH999";
+  passenger.name = "Mr. " + passenger.name;
+  if (passenger.passport === 24525908) {
+    alert("Checked in!");
+  } else {
+    alert("Wrong Passport!");
+  }
+};
+checkIn(flight, jonas);
+console.log(flight);
+console.log(jonas);
+
+// Is the same as doing......
+const flightNum = flight;
+const passenger = jonas;
+
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 100000000);
+  console.log(person.passport);
+};
+newPassport(jonas);
+checkIn(flight, jonas);
+console.log(jonas);
+*/
+
