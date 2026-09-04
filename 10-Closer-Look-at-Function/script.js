@@ -64,3 +64,6 @@ checkIn(flight, jonas);
 console.log(jonas);
 */
 
+// ************* First-class and Higher-Order Function *************
+
+
