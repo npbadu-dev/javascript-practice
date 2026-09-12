@@ -116,7 +116,7 @@ greet1("Haha!")("Lol");
 */
 
 // *********** The Call and Apply Method **************
-/*
+
 const lufthansa = {
   airline: "Lufthansa",
   itacode: "LH",
@@ -163,5 +163,19 @@ const flightData = [543, "George Copper"];
 
 // in modern JS apply method is not used anymore, because we can do it using call method too
 book.call(swiss, ...flightData);
-*/
+
+// *********** The Bind Method **************
+
+// book.call(eurowings, 23, "Sarah Williams");
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, "Steven Williams");
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23("Nitesh Badu");
+bookEW23("Mark Copper")
+
+// With EventListeners
 
