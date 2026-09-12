@@ -116,7 +116,7 @@ greet1("Haha!")("Lol");
 */
 
 // *********** The Call and Apply Method **************
-
+/*
 const lufthansa = {
   airline: "Lufthansa",
   itacode: "LH",
@@ -131,12 +131,37 @@ const lufthansa = {
 };
 lufthansa.book(239, "Nitesh Badu");
 lufthansa.book(265, "John Smith");
-console.log(lufthansa);
 
 const eurowings = {
-  name: "Eurowings",
+  airline: "Eurowings",
   itacode: "EW",
   bookings: [],
 };
 
 const book = lufthansa.book;
+
+// book(23, "Sarah Williams"); // this will not work because this keyword is undefined here
+
+// Call Method!
+book.call(eurowings, 23, "Sarah Williams");
+console.log(eurowings);
+
+book.call(lufthansa, 244, "Marry Copper");
+console.log(lufthansa);
+
+const swiss = {
+  airline: "Swiss Air Lines",
+  itacode: "LX",
+  bookings: [],
+};
+book.call(swiss, 583, "Marry Copper");
+
+// Apply method
+const flightData = [543, "George Copper"];
+// book.apply(swiss, flightData);
+// console.log(swiss);
+
+// in modern JS apply method is not used anymore, because we can do it using call method too
+book.call(swiss, ...flightData);
+*/
+
