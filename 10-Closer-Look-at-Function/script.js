@@ -97,4 +97,21 @@ document.body.addEventListener("click", high5);
 ["Nitesh", "Rohit", "Khil"].forEach(high5)
 */
 
-// 
+// ************* Function Returning Function ***************
+/*
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet("Hey");
+greeterHey("Nitesh");
+greeterHey("Jonas");
+
+greet("Hello")("Nitesh");
+
+const greet1 = (greeting) => (name) => console.log(`${greeting} ${name}`);
+greet1("Haha!")("Lol");
+*/
+
