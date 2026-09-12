@@ -115,3 +115,28 @@ const greet1 = (greeting) => (name) => console.log(`${greeting} ${name}`);
 greet1("Haha!")("Lol");
 */
 
+// *********** The Call and Apply Method **************
+
+const lufthansa = {
+  airline: "Lufthansa",
+  itacode: "LH",
+  bookings: [],
+  // book: function()
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.itacode}${flightNum}`,
+    );
+    this.bookings.push({ flight: `${this.itacode}${flightNum}`, name });
+  },
+};
+lufthansa.book(239, "Nitesh Badu");
+lufthansa.book(265, "John Smith");
+console.log(lufthansa);
+
+const eurowings = {
+  name: "Eurowings",
+  itacode: "EW",
+  bookings: [],
+};
+
+const book = lufthansa.book;
